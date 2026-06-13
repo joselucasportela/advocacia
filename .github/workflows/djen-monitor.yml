@@ -1,0 +1,33 @@
+name: DJEN Monitor – OAB PI 16818
+
+on:
+  schedule:
+    # Roda todo dia às 11:00 UTC = 08:00 Brasília (UTC-3)
+    - cron: '0 11 * * 1-5'
+  workflow_dispatch:   # Permite execução manual
+
+jobs:
+  monitor:
+    name: Buscar publicações DJEN e notificar
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
+
+      - name: Configurar Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Instalar dependências
+        run: pip install requests
+
+      - name: Executar monitor DJEN
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_PASS: ${{ secrets.GMAIL_PASS }}
+          CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
+        run: python monitor_djen.py
