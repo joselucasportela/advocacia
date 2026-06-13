@@ -2,8 +2,8 @@ name: DJEN Monitor – OAB PI 16818
 
 on:
   schedule:
-    # Roda todo dia às 11:00 UTC = 08:00 Brasília (UTC-3)
-    - cron: '0 11 * * 1-5'
+    # Roda todo dia às 15:00 UTC = 12:00 Brasília (UTC-3)
+    - cron: '0 15 * * *'
   workflow_dispatch:   # Permite execução manual
 
 jobs:
