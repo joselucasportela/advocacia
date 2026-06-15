@@ -1,0 +1,5 @@
+processo,cliente,data_audiencia,hora,vara,tipo,local
+0001234-55.2024.8.22.0001,João Silva,2026-06-16,14:00,1ª Vara Cível de Teresina,Conciliatória (CPC 334),Forum Cível - Sala 05
+0005678-90.2024.8.22.0002,Maria Santos,2026-06-18,09:30,3ª Vara do Trabalho de Teresina,Una Trabalhista (CLT 849),TRT 22ª Região - Sala 03
+0009876-12.2024.8.22.0003,Pedro Oliveira,2026-06-22,10:00,2ª Vara Cível de Teresina,Instrução e Julgamento,Forum Cível - Sala 02
+0003333-44.2024.8.22.0004,Ana Costa,2026-06-30,14:30,5ª Vara Criminal de Teresina,AIJ Criminal (CPP 400),Forum Criminal - Sala 08

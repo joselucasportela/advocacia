@@ -1,0 +1,36 @@
+name: Monitor de Índices Econômicos
+
+on:
+  schedule:
+    - cron: '0 11 * * 1-5'  # Dias úteis às 8h BRT (11h UTC)
+  workflow_dispatch:
+
+jobs:
+  indices-monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependências
+        run: pip install requests
+
+      - name: Buscar índices no BCB e enviar e-mail
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_PASS: ${{ secrets.GMAIL_PASS }}
+        run: python scripts/indices_monitor.py
+
+      - name: Commit índices atualizados
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/indices.csv
+          git diff --staged --quiet || git commit -m "chore: atualiza indices economicos $(date +%Y-%m-%d)"
+          git push

@@ -1,0 +1,25 @@
+name: Monitor de Honorários
+
+on:
+  schedule:
+    - cron: '0 12 * * 1'  # Segunda-feira às 9h BRT (12h UTC)
+  workflow_dispatch:
+
+jobs:
+  honorarios-monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Executar Monitor de Honorários
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_PASS: ${{ secrets.GMAIL_PASS }}
+        run: python scripts/honorarios_monitor.py

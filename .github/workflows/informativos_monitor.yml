@@ -1,0 +1,28 @@
+name: Monitor de Informativos STJ/STF
+
+on:
+  schedule:
+    - cron: '0 11 * * 1'  # Segunda-feira às 8h BRT (11h UTC)
+  workflow_dispatch:
+
+jobs:
+  informativos-monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependências
+        run: pip install requests
+
+      - name: Executar Monitor de Informativos
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_PASS: ${{ secrets.GMAIL_PASS }}
+        run: python scripts/informativos_monitor.py
