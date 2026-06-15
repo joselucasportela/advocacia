@@ -1,0 +1,25 @@
+name: Relatório Semanal da Carteira
+
+on:
+  schedule:
+    - cron: '0 12 * * 0'  # Domingo às 9h BRT (12h UTC)
+  workflow_dispatch:
+
+jobs:
+  relatorio-semanal:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Executar Relatório Semanal
+        env:
+          GMAIL_USER: ${{ secrets.GMAIL_USER }}
+          GMAIL_PASS: ${{ secrets.GMAIL_PASS }}
+        run: python scripts/relatorio_semanal.py
