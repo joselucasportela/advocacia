@@ -1,8 +1,0 @@
-cliente,tipo_cliente,status_caso,ultimo_contato,responsavel,observacao
-João Silva,vip,ativo,2026-05-28,Dr. Lucas Portela,Ação indenizatória em fase de instrução
-Maria Santos,comum,ativo,2026-04-10,Dr. Lucas Portela,Reclamatória trabalhista — aguardando audiência
-Pedro Oliveira,comum,ativo,2026-06-01,Dr. Lucas Portela,Defesa cível — contestação entregue
-Ana Costa,vip,ativo,2026-03-15,Dr. Lucas Portela,Defesa criminal — aguardando AIJ
-Carlos Mendes,baixa,encerrado,2026-01-20,Dr. Lucas Portela,Processo arquivado com acordo
-Lucia Ferreira,comum,ativo,2026-05-05,Dr. Lucas Portela,Divórcio consensual — pendente escritura
-Roberto Alves,vip,ativo,2026-04-22,Dr. Lucas Portela,Recuperação judicial — plano em votação

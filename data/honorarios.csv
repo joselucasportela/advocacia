@@ -1,7 +1,0 @@
-cliente,descricao,valor,vencimento,status,parcela
-João Silva,Honorários iniciais — Ação Indenizatória,R$ 2.000,00,2026-05-10,pendente,1/3
-João Silva,Honorários — 2ª parcela,R$ 2.000,00,2026-06-10,pendente,2/3
-Maria Santos,Honorários reclamatória trabalhista,R$ 3.500,00,2026-06-20,pendente,1/2
-Pedro Oliveira,Honorários contestação cível,R$ 1.800,00,2026-06-01,pago,única
-Ana Costa,Honorários defesa criminal,R$ 5.000,00,2026-07-01,pendente,1/4
-Lucia Ferreira,Honorários divórcio consensual,R$ 2.500,00,2026-06-17,pendente,única
